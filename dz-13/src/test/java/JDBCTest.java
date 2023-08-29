@@ -41,7 +41,7 @@ public class JDBCTest
             PreparedStatement deleteStatement = conn.prepareStatement(deleteQuery);
             deleteStatement.setInt(1, idToDelete );
             deleteStatement.executeUpdate();
-
+            conn.close();
 
         }catch (SQLException e){
             throw new RuntimeException("Couldn't connect to database" , e);
